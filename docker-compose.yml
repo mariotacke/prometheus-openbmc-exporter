@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  prometheus-openbmc-exporter:
+    image: ghcr.io/mariotacke/prometheus-openbmc-exporter:latest
+    volumes:
+      - ./openbmc-exporter.yaml:/etc/openbmc-exporter.yaml
+      - ./openbmc-credentials.yaml:/etc/secrets/openbmc-credentials.yaml
+    ports:
+      - 8000:8000
